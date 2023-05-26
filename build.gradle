@@ -14,10 +14,11 @@ def versions = [
 ]
 
 dependencies {
+    //implementation 'org.slf4j:slf4j-log4j1:1.7.29'
     implementation platform("com.typesafe.akka:akka-bom_${versions.ScalaBinary}:2.8.2")
     implementation "com.typesafe.akka:akka-actor-typed_${versions.ScalaBinary}"
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation "ch.qos.logback:logback-classic:1.2.3"
+    //implementation group: 'com.typesafe.akka', name: 'akka-actor-typed_2.12', version: '2.6.6'
 }
 
 test {

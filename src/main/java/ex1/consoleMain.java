@@ -9,10 +9,8 @@ import ex1.actor.RootActor;
 public class consoleMain {
 
     public static Behavior<Void> create(){
-
         return Behaviors.setup(context -> {
             context.spawn(RootActor.create(RootActor.ViewType.CONSOLE), "rootActor");
-
             return Behaviors.receive(Void.class)
                     .onSignal(Terminated.class, sig -> Behaviors.stopped())
                     .build();
@@ -20,7 +18,7 @@ public class consoleMain {
     }
 
     public static void main(String[] args){
-        ActorSystem<Void> system = ActorSystem.create(consoleMain.create(),"SourceAnalyzer");
+        ActorSystem.create(consoleMain.create(),"SourceAnalyzer");
     }
 
 }
